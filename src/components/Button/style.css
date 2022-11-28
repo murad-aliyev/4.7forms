@@ -11,7 +11,7 @@ input, textarea{
 button{
     background-color: tan;
     padding: 10px;
-    width: 300px;
+    width: 100px;
     border-radius: 5px;
     border: 1px solid tan;
 }
@@ -24,4 +24,21 @@ button{
     border-radius: 6px;
     margin: auto;
     margin-top: 100px;
+}
+
+p{
+    display: inline;
+}
+
+.none{
+    display: inline;
+    color: red;
+    font-size: 14px;
+    display: none;
+}
+
+.display{
+    color: red;
+    font-size: 14px;
+    display: inline;
 }

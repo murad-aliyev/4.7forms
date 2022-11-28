@@ -3,28 +3,31 @@ import './style.css'
 
 class SubscribeButton extends Component {
  
-  state = { name: "Murad",
-            surname: "murad.aliev.2003m@gmail.com",
-            secondname: "12345678", 
+  state = { name: "",
+            surname: "",
+            secondname: "", 
             adress: "",
             phoneNumber: "",
             isValid: true,
-            name1: "class",
-            surname1: "murad.aliev.2003m@gmail.com",
-            secondname1: "12345678", 
-            adress1: "",
-            phoneNumber1: ""
+            pclassone: "none",
+            pclasstwo: "none"
           };
 
   handleChange = (event) => {
       this.setState({[ event.target.name] : event.target.value});
+      // if(event.target.value.length<5){
+      //   this.setState({[this.getElementById(event.target.name+"1").className] : "display"}); 
+        
+      // }else{
+      //   this.setState({[this.getElementById(event.target.name+"1").className] : "none"}); 
 
+      // }
   }
 
-  handleClick = (event) => {
+//   handleClick = (event) => {
 
-    alert("Müvəffəqiyyətlə göndərildi");
-}
+//     alert("Müvəffəqiyyətlə göndərildi");
+// }
 
   handleIsValid = (event) => {
     this.setState({ ischecked: !this.state.ischecked });
@@ -32,53 +35,51 @@ class SubscribeButton extends Component {
 
   handleClick1 = () => this.setState({ name: ""});
   handleClick2 = () => this.setState({ email: ""});
-  handleClick3 = () => this.setState({ password: "" });
 
 
   handleSubmit = (evt) => {
     evt.preventDefault();
     alert("Müvəffəqiyyətlə göndərildi")
-  };
-
+  }
 
   render() {
     return (
       <form onSubmit={this.handleSubmit} className='user'>
-        
   <label>
   <p>{JSON.stringify(this.state)}</p>  
     Ad:
     <br></br>   
-    <input class="user-name" id='name' name="name" onChange={this.handleChange} type="text"/>
-    <p>*Simvol sayı 5-dən çox olmalıdır</p>
+    <input className="user-name" id='name' name="name" onChange={this.handleChange} type="text"/>
+    <p id="name1" className={this.state.pclassone}>*Simvol sayı 4-dən çox olmalıdır</p>
   </label>
   <br></br>
   <br></br>
   <label>
     Soyad:
     <br></br> 
-    <input class="series" id="surname" name="surname" onChange={this.handleChange} type="text"/>
+    <input className="series" id="surname" name="surname" onChange={this.handleChange} type="text"/>
+    <p id="surname1" className={this.state.pclasstwo}>*Simvol sayı 4-dən çox olmalıdır</p>
   </label>
   <br></br>
   <br></br> 
   <label> 
     Ata adı:  
     <br></br> 
-    <input class="user-age" id="secondname" name="secondname" onChange={this.handleChange} type="text"/>
+    <input className="user-age" id="secondname" name="secondname" onChange={this.handleChange} type="text"/>
   </label>
   <br></br>
   <br></br>
   <label>
     Ünvan:
     <br></br>
-    <input class="e-mail" id="adress" name="adress" onChange={this.handleChange} type="text"/>
+    <input className="e-mail" id="adress" name="adress" onChange={this.handleChange} type="text"/>
   </label>
   <br></br>
   <br></br>
   <label>
    Telefon nömrəsi:
    <br></br>
-    <input class="pNumber" id="phoneNumber" name="phoneNumber" onChange={this.handleChange} type="text"/>
+    <input className="pNumber" id="phoneNumber" name="phoneNumber" onChange={this.handleChange} type="text"/>
   </label>
   <br></br>
   <br></br>
